@@ -21,9 +21,15 @@ db.connect((err) => {
 
 /* Add your routes here */
 //Health Checking
-app.get('/health',(req,res) => {
+/*app.get('/health',(req,res) => {
    logger.info('Health check endpoint');
    res.json("Health check endpoint");
+});
+*/
+
+app.get('/health', (req, res) => {
+   logger.info('Health check endpoint');
+   res.status(200).send('OK'); // Clear 200 Status 
 });
 
 app.use('/api', routes);
