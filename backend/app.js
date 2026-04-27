@@ -19,9 +19,10 @@ db.connect((err) => {
    logger.info('Connected to MySQL Database');
 });
 
-app.get('/health',(req,res) => {
-   logger.info('Health check endpoint');
-   res.json("Health check endpoint");
+// Replace your existing health check with this
+app.get('/health', (req, res) => {
+    logger.info('Health check endpoint hit');
+    res.status(200).send('OK'); // Ye ALB ke liye best hai
 });
 
 app.use('/api', routes);
